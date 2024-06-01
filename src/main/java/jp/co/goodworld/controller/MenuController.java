@@ -10,19 +10,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class MenuController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MenuController.class);
 
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String home() {
-	    	logger.info("requesting home");
-		return "home";
+	@RequestMapping(value="/YZ/menu", method=RequestMethod.GET)
+	public String menu() {
+	    	logger.info("requesting menu");
+		return "YZ/menu";
 	}
+
+	@RequestMapping(value="/YZ/menu.do", method=RequestMethod.POST)
+	public String doMenu() {
+		logger.info("requesting doMenu");
+		return "YZ/member";
+	}
+
 
 }
 
